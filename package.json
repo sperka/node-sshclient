@@ -1,0 +1,18 @@
+{
+	"name": "sshclient",
+	"description": "Lightweight ssh/scp client library for node.",
+	"version": "0.0.1",
+	"keywords": ["ssh", "scp", "ssh client", "scp client"],
+	"author": "Gergely Varga <greg@sph3r.com>",
+	"main": "./index",
+
+
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/sperka/node-sshclient.git"
+	},
+	"devDependencies": {
+		"mocha": "*",
+		"should": "*"
+	}
+}
