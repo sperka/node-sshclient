@@ -4,12 +4,12 @@ var SSH = require('../lib/ssh')
 
 
 describe('SSH tests', function() {
-	var hostname = 'sph3rISIS';
+	var hostname = 'testHostname';
 
 	describe('SSH basic commands', function() {
 		var ssh
 			, expected = {
-				hostname: 'sph3r'
+				hostname: 'testHostname'
 			};
 
 		before(function(done) {
