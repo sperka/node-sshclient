@@ -4,13 +4,10 @@ var SSH = require('../lib/ssh')
 
 
 describe('SSH tests', function() {
-	var hostname = 'testHostname';
+	var hostname = 'testhostname';
 
 	describe('SSH basic commands', function() {
-		var ssh
-			, expected = {
-				hostname: 'testHostname'
-			};
+		var ssh;
 
 		before(function(done) {
 			ssh = new SSH({
@@ -19,19 +16,6 @@ describe('SSH tests', function() {
 			});
 
 			done();
-		});
-
-		it('Should print hostname', function(done) {
-			ssh.command('hostname', function(procResult) {
-				procResult.should.be.an.instanceof(ProcResult, 'ProcResult');
-				procResult.stderr.should.be.empty;
-
-				var out = procResult.stdout.replace('\n', '');
-				out.should.equal(expected.hostname);
-				procResult.exitCode.should.equal(0);
-
-				done();
-			});
 		});
 
 		it('Should print the parameter', function(done) {
@@ -105,7 +89,7 @@ describe('SSH tests', function() {
 		});
 	});
 
-	describe('SSH \'stress\' test', function() {
+	describe('Listener \'stress\' test', function() {
 		var ssh;
 
 		before(function() {
@@ -117,10 +101,9 @@ describe('SSH tests', function() {
 		it('Should start multiple long-running commands', function(done) {
 
 			function startLong() {
-				console.log('Starting long-running command...');
+				//console.log('Starting long-running command...');
 				ssh.command('sleep 4 && echo done', function(procResult) {
-					console.log('Long-running command with pid ' + procResult.pid + ' finished');
-
+					//console.log('Long-running command with pid ' + procResult.pid + ' finished');
 					procResult.stderr.should.be.empty;
 					var out = procResult.stdout.replace('\n', '');
 					out.should.equal('done');
