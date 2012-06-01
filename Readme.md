@@ -5,6 +5,8 @@ _sshclient_ doesn't support interactivity, so you need to set up your remote ser
 
 ## Example
 
+### ssh
+
 	var ssh = new SSH({
 		hostname: 'server'
 		, user: 'user'
@@ -13,6 +15,20 @@ _sshclient_ doesn't support interactivity, so you need to set up your remote ser
 
 	ssh.command('echo', 'test', function(procResult) {
 		console.log(procResult.stdout);
+	});
+	
+### scp
+
+	var scp = new SCP({
+		hostname: 'server'
+		, user: 'user'
+	});
+	
+	scp.upload('myfile', '.', function(procResult) {
+		console.log(procResult.exitCode);
+	});
+	scp.download('remotefile', 'localPath/', function(procResult) {
+		console.log(procResult.exitCode);
 	});
 
 For more examples, see the tests.
@@ -25,8 +41,8 @@ _Note_: not yet submitted to the _npm_ repository!
 
 ## Running tests
 
-To run the tests, simply run this command:
+To run the tests, simply run:
 
 	$ make test
 
-_Note_: set the `hostname` variable to your server to succeed with the tests.
+_Note_: set the `hostname` variable to your server's hostname to succeed with the tests.
