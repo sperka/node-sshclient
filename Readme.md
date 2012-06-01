@@ -24,10 +24,10 @@ _sshclient_ doesn't support interactivity, so you need to set up your remote ser
 		, user: 'user'
 	});
 	
-	scp.upload('myfile', '.', function(procResult) {
+	scp.upload('myfile', 'path/to/remote/dir/', function(procResult) {
 		console.log(procResult.exitCode);
 	});
-	scp.download('remotefile', 'localPath/', function(procResult) {
+	scp.download('remotefile', 'path/to/local/dir/', function(procResult) {
 		console.log(procResult.exitCode);
 	});
 
