@@ -4,7 +4,7 @@ var SSH = require('../lib/ssh')
 
 
 describe('SSH tests', function() {
-	var hostname = 'testhostname';
+	var hostname =  'testhostname';
 
 	describe('SSH basic commands', function() {
 		var ssh;
@@ -56,7 +56,7 @@ describe('SSH tests', function() {
 
 		it('Should fail to connect to dummy host', function(done) {
 			var ssh = new SSH({
-				hostname: 'dummy' // if not having a 'dummy' entry in your hosts file
+				hostname: 'dummy' // test success if not having a 'dummy' entry in your hosts file
 			});
 			ssh.command('echo', 'test', function(procResult) {
 				procResult.stdout.should.be.empty;
@@ -72,7 +72,7 @@ describe('SSH tests', function() {
 		it('Should fail to connect to dummy port', function(done) {
 			var ssh = new SSH({
 				hostname: hostname
-				, port: 12345
+				, port: 12345 // test success if not using port 12345 for ssh by default
 				, option: {
 					ConnectTimeout: 2
 				}
