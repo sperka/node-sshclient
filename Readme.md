@@ -35,9 +35,7 @@ For more examples, see the tests.
 
 ## Installation
 
-	$ npm install sshclient
-
-_Note_: not yet submitted to the _npm_ repository!
+	$ npm install node-sshclient
 
 ## Running tests
 
