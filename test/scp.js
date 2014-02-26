@@ -9,17 +9,18 @@ describe('SCP tests', function() {
 	describe('SCP test', function() {
 		var ssh, scp
 			, hostname = 'testhostname'
+			, debug = false
 			, dlDir = 'test/downloadtest/';
 
 		before(function(done) {
 			ssh = new SSH({
 				hostname: hostname
-				, debug: 0
+				, debug: debug
 			});
 
 			scp = new SCP({
 				hostname: hostname
-				, debug: 0
+				, debug: debug
 			});
 
 			fs.mkdirSync(dlDir);
