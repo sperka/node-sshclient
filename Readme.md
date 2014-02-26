@@ -41,13 +41,11 @@ _Note_: not yet submitted to the _npm_ repository!
 
 ## Running tests
 
-To run automated tests, simply run:
+To run tests, simply enter:
 
-	$ make test
+	$ npm test
 
-To run tests manually, see `Makefile` (and don't forget to set --timeout 10000)
+(note that in mocha.opts --timeout is set to 25seconds to test connect fail - you may want to change it depending on your test system).
 
-	$ mocha test/ssh.js --timeout 10000
-
-
-_Note_: set the `hostname` variable to your server's hostname to succeed with the tests.
+_Note_: set the `hostname` variable to your server's hostname to succeed with the tests (or add `testhostname` to
+`~/.ssh/config` with the proper settigs).
