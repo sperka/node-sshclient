@@ -46,4 +46,4 @@ To run tests, simply enter:
 (note that in mocha.opts --timeout is set to 25seconds to test connect fail - you may want to change it depending on your test system).
 
 _Note_: set the `hostname` variable to your server's hostname to succeed with the tests (or add `testhostname` to
-`~/.ssh/config` with the proper settigs).
+`~/.ssh/config` with the proper settings).
