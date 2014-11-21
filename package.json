@@ -1,6 +1,6 @@
 {
 	"name": "node-sshclient",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Lightweight ssh/scp client library for nodejs.",
 	"keywords": ["ssh", "scp", "ssh client", "scp client", "node ssh", "node scp"],
 	"author": {
